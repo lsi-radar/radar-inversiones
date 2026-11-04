@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Latam Scope Intelligence · Radar de inversiones de la Región Andina</title>
 <meta name="description" content="Radar de inversiones, M&A, expansiones y estrategias empresariales en Perú, Colombia, Chile y Ecuador, actualizado cada semana.">
+<meta name="theme-color" content="#0E1A26">
+<link rel="canonical" href="https://lsi-radar.github.io/radar-inversiones/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Latam Scope Intelligence">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://lsi-radar.github.io/radar-inversiones/">
+<meta property="og:title" content="Las inversiones de la Región Andina, en un solo lugar">
+<meta property="og:description" content="Radar semanal de inversiones, M&A, expansiones y financiamiento de empresas en Perú, Colombia, Chile y Ecuador. Solicita una demo para tu empresa o universidad.">
+<meta property="og:image" content="https://lsi-radar.github.io/radar-inversiones/marca/lsi-compartir.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Latam Scope Intelligence · Las inversiones de la Región Andina, en un solo lugar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Las inversiones de la Región Andina, en un solo lugar">
+<meta name="twitter:description" content="Radar semanal de inversiones, M&A, expansiones y financiamiento en Perú, Colombia, Chile y Ecuador.">
+<meta name="twitter:image" content="https://lsi-radar.github.io/radar-inversiones/marca/lsi-compartir.png">
+<link rel="icon" type="image/png" sizes="32x32" href="marca/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="marca/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%230E1A26'/%3E%3Cpath d='M6 33 L12 27 L17 30.5 L24 19 L29.5 27.5 L33.5 24.5 L42 32' fill='none' stroke='%2349AE9B' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='24' r='18.6' fill='none' stroke='%23D8AD52' stroke-width='2.6'/%3E%3Ccircle cx='24' cy='19' r='3' fill='%23D8AD52'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,16 +126,16 @@ section[id]{scroll-margin-top:72px;}
 
 /* Países */
 .countries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;}
-@media(max-width:980px){.countries{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:1180px){.countries{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:520px){.countries{grid-template-columns:1fr;}}
 .cty{text-align:left;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;transition:transform .18s,border-color .18s;}
 .cty:hover{transform:translateY(-3px);border-color:var(--cc);}
 .cty-top{display:flex;align-items:center;gap:12px;}
 .cty-n{font-family:var(--serif);font-size:22px;font-weight:600;}
 .cty-since{font-size:12px;color:var(--muted-2);}
-.cty-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
+.cty-stats{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:10px 18px;}
 .cty-stats div{font-size:12px;color:var(--muted);}
-.cty-stats b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--off);}
+.cty-stats b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--off);white-space:nowrap;}
 .cty-stats .g b{color:var(--gold);}
 .cty-cta{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:13px;font-weight:600;color:var(--cc);}
 
@@ -374,8 +392,26 @@ footer{padding-top:44px;padding-bottom:52px;}
 .dm-done h3{font-family:var(--serif);font-size:24px;font-weight:600;margin:12px 0 6px;}
 .dm-done p{margin:0 auto 18px;max-width:46ch;color:var(--ink-2);font-size:14.5px;}
 .dm-done p a{color:#8A6418;font-weight:600;}
-.dmx.sent .df-wrap{display:none;}
+.dmx.sent .df-wrap,.dmx.sent .dm-note{display:none !important;}
 .dmx.sent .dm-done{display:block;}
+
+/* Compartir ficha */
+.fx-share{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:14px;}
+.fx-share-l{font-size:12px;font-weight:600;color:var(--ink-2);margin-right:4px;}
+.fs-b{display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;border:1px solid rgba(20,33,44,0.16);background:rgba(255,255,255,0.7);color:var(--ink);font-size:12.5px;font-weight:500;text-decoration:none;cursor:pointer;transition:border-color .15s,background .15s;}
+.fs-b:hover{border-color:#B8872A;background:#FFF8EA;}
+.fs-b svg{width:14px;height:14px;flex-shrink:0;}
+.fs-b.done{border-color:#2E8B78;background:#E3F3EF;color:#1F6B5C;}
+@media(max-width:560px){.fx-share-l{width:100%;}}
+/* Nota en el formulario (p. ej. descarga para suscriptores) */
+.dm-note{display:none;gap:10px;align-items:flex-start;margin:0 0 18px;padding:12px 14px;border-radius:10px;background:#FFF4DC;border:1px solid #EBCB85;color:#5B4310;font-size:13.5px;line-height:1.5;}
+.dm-note.show{display:flex;}
+.dm-note svg{width:18px;height:18px;flex-shrink:0;margin-top:1px;color:#B8872A;}
+#bCsv .lk{display:none;}
+.demo-lock #bCsv .lk{display:inline;}
+.demo-lock #bCsv .dl{display:none;}
+.df-ok a{color:#8A6418;font-weight:600;}
+.foot small a{color:var(--muted);}
 </style>
 </head>
 <body>
@@ -521,7 +557,7 @@ footer{padding-top:44px;padding-bottom:52px;}
       <span class="f-label">Tipo</span><div class="seg" id="bTipo"></div>
       <span style="flex:1"></span>
       <button class="reset" id="bReset" type="button" hidden>Quitar filtros</button>
-      <button class="btn-sm" id="bCsv" type="button" title="Descarga los anuncios filtrados para abrirlos en Excel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Descargar en Excel (CSV)</button>
+      <button class="btn-sm" id="bCsv" type="button" title="Descarga los anuncios filtrados para abrirlos en Excel"><svg class="dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Descargar en Excel (CSV)</button>
     </div>
     <div class="sectors" id="bSectors" aria-label="Sectores"></div>
   </div>
@@ -594,7 +630,7 @@ footer{padding-top:44px;padding-bottom:52px;}
     <div>
       <small>Fuentes: comunicados oficiales y prensa económica especializada.</small>
       <small>Información referencial. No constituye asesoría de inversión.</small>
-      <small>Contacto: <a href="mailto:informes.lsi2026@gmail.com" style="color:var(--muted)">informes.lsi2026@gmail.com</a></small>
+      <small>Contacto: <a href="mailto:informes.lsi2026@gmail.com">informes.lsi2026@gmail.com</a> · <a href="privacidad.html">Política de privacidad</a></small>
       <small>© 2026 Latam Scope Intelligence</small>
     </div>
   </div>
@@ -613,6 +649,7 @@ footer{padding-top:44px;padding-bottom:52px;}
       <p>Déjanos tus datos y te escribimos para coordinar una demo del Radar de inversiones.</p>
     </div>
     <div class="fx-b">
+      <div class="dm-note" id="dmNote" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="dmNoteT"></span></div>
       <form class="df-wrap" id="dmForm" novalidate>
         <div class="df">
           <div class="full">
@@ -636,7 +673,7 @@ footer{padding-top:44px;padding-bottom:52px;}
           <div class="full"><label for="dmMsg">¿Qué te interesa del Radar?</label><textarea id="dmMsg" name="mensaje" placeholder="Por ejemplo: sectores, países o empresas que sigues, o para qué lo usarías."></textarea></div>
           <div class="full">
             <label class="df-ok" id="dmOkL"><input type="checkbox" id="dmOk" name="consentimiento" value="Sí">
-            <span>Autorizo a Latam Scope Intelligence a usar estos datos solo para contactarme sobre la demo y sus planes de suscripción, conforme a la Ley N.° 29733 de Protección de Datos Personales. <i>*</i></span></label>
+            <span>Autorizo a Latam Scope Intelligence a usar estos datos solo para contactarme sobre la demo y sus planes de suscripción, conforme a la Ley N.° 29733 de Protección de Datos Personales y la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a>. <i>*</i></span></label>
           </div>
           <div class="df-hp" aria-hidden="true"><label for="dmHp">No llenar</label><input type="checkbox" id="dmHp" name="botcheck" tabindex="-1"></div>
         </div>
@@ -774,7 +811,11 @@ function passA(a, skip){
     var r = e.target.closest('[data-emp]'); if(r){ openFicha(r.dataset.emp); return; }
     if(e.target.closest('#bMore')){ B.show += 30; renderBase(); }
   });
-  $('bCsv').addEventListener('click', downloadCsv);
+  $('bCsv').addEventListener('click', function(){
+    if(window.LSI_DEMO && LSI_DEMO.modoDemo && window.openDemo){
+      window.openDemo(null, 'descarga a Excel', 'La <b>descarga a Excel</b> está disponible para suscriptores. Solicita una demo y te mostramos el plan que mejor encaja con tu equipo.');
+    } else downloadCsv();
+  });
 })();
 function countBy(skip, key){ var c = {}; D.anuncios.forEach(function(a){ if(passA(a, skip)) c[a[key]] = (c[a[key]]||0) + 1; }); return c; }
 function renderBase(){
@@ -846,6 +887,36 @@ function groupBlock(e){
       return '<button class="gm" type="button" data-goto="'+o.id+'">'+flag(o.items[0].pais)+'<span class="gm-t"><span class="gm-n">'+esc(o.nombre)+'</span><br><span class="gm-r">'+esc(m.rol.charAt(0).toUpperCase()+m.rol.slice(1))+' · '+esc(o.sector)+'</span></span>'+
         '<span class="gm-s"><b>'+(t?usd(t):'—')+'</b>'+o.items.length+(o.items.length===1?' anuncio':' anuncios')+'</span></button>'; }).join('') + '</div></div>';
 }
+function fichaUrl(e){ return location.origin + location.pathname + '#empresa=' + e.id; }
+function shareBar(e){
+  var u = encodeURIComponent(fichaUrl(e)), t = encodeURIComponent('Ficha de ' + e.nombre + ' en el Radar de inversiones de Latam Scope Intelligence: ' + fichaUrl(e));
+  var I = {
+    link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+    wa:'<path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8L4 20z"/><path d="M9 9.5c.3 1.6 1.9 3.3 3.6 3.9l1-1 1.9.7v1.3c0 .4-.4.8-.9.8A6 6 0 0 1 8 9.1c0-.5.4-.9.8-.9h1.3l.6 1.9-1 .8z"/>',
+    in:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/>',
+    mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    share:'<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/>'
+  };
+  function ic(k){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+I[k]+'</svg>'; }
+  return '<div class="fx-share" role="group" aria-label="Compartir esta ficha"><span class="fx-share-l">Compartir ficha</span>'+
+    (navigator.share && window.matchMedia && matchMedia('(pointer:coarse)').matches ? '<button type="button" class="fs-b" data-share="native">'+ic('share')+'Compartir</button>' : '')+
+    '<button type="button" class="fs-b" data-share="copy">'+ic('link')+'<span>Copiar enlace</span></button>'+
+    '<a class="fs-b" target="_blank" rel="noopener" href="https://wa.me/?text='+t+'">'+ic('wa')+'WhatsApp</a>'+
+    '<a class="fs-b" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+u+'">'+ic('in')+'LinkedIn</a>'+
+    '<a class="fs-b" href="mailto:?subject='+encodeURIComponent(e.nombre+' · Radar de inversiones LSI')+'&body='+t+'">'+ic('mail')+'Correo</a></div>';
+}
+function bindShare(e){
+  var bar = $('fx').querySelector('.fx-share'); if(!bar) return;
+  bar.addEventListener('click', function(ev){
+    var b = ev.target.closest('[data-share]'); if(!b) return;
+    var url = fichaUrl(e);
+    if(b.dataset.share === 'native'){ navigator.share({title: e.nombre + ' · Latam Scope Intelligence', text: 'Ficha de ' + e.nombre + ' en el Radar de inversiones de LSI', url: url}).catch(function(){}); return; }
+    var lab = b.querySelector('span');
+    function ok(){ b.classList.add('done'); lab.textContent = '¡Enlace copiado!'; setTimeout(function(){ b.classList.remove('done'); lab.textContent = 'Copiar enlace'; }, 2200); }
+    function fallback(){ var ta = document.createElement('textarea'); ta.value = url; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); ok(); }catch(x){ window.prompt('Copia este enlace:', url); } document.body.removeChild(ta); }
+    if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(ok, fallback); else fallback();
+  });
+}
 function renderFicha(){
   var e = EMP[FX.emp]; if(!e) return;
   var paises = Array.from(new Set(e.items.map(function(a){ return a.pais; })));
@@ -854,7 +925,7 @@ function renderFicha(){
   var tot = total(e.items);
   var html = '<div class="fx-h"><button class="fx-x" type="button" id="fxX" aria-label="Cerrar ficha">✕</button>'+
     '<div class="fx-meta">'+paises.map(function(p){ return flag(p)+' '+PAIS[p].n; }).join(' <span class="dot"></span> ')+' <span class="dot"></span> '+esc(e.sector)+(e.idf ? ' <span class="dot"></span> ID tributario '+esc(e.idf) : '')+'</div>'+
-    '<h2 id="fxTitle">'+esc(e.nombre)+'</h2>'+(e.razon && e.razon.toLowerCase() !== e.nombre.toLowerCase() ? '<div class="fx-raz">'+esc(e.razon)+'</div>' : '')+(GRP[e.id] ? '<div class="fx-role">Parte del '+esc(GRP[e.id].g.nombre)+': '+esc(GRP[e.id].rol)+'</div>' : '')+
+    '<h2 id="fxTitle">'+esc(e.nombre)+'</h2>'+(e.razon && e.razon.toLowerCase() !== e.nombre.toLowerCase() ? '<div class="fx-raz">'+esc(e.razon)+'</div>' : '')+(GRP[e.id] ? '<div class="fx-role">Parte del '+esc(GRP[e.id].g.nombre)+': '+esc(GRP[e.id].rol)+'</div>' : '')+shareBar(e)+
     '<div class="fx-stats"><div><b>'+e.items.length+'</b>'+(e.items.length===1?'anuncio':'anuncios')+'</div><div><b>'+(tot?usd(tot):'—')+'</b>monto confirmado</div>'+
     '<div><b>'+SEM[e.first].label+'</b>primer registro</div><div><b>'+SEM[e.last].label+'</b>último registro</div></div></div>'+
     '<div class="fx-b">' + groupBlock(e) + '<h3 class="fx-sub">Historial de anuncios</h3>';
@@ -876,6 +947,7 @@ function renderFicha(){
   html += research(e) + '</div>';
   $('fx').innerHTML = html;
   $('fxX').addEventListener('click', closeFicha);
+  bindShare(e);
   $('fx').querySelectorAll('[data-goto]').forEach(function(b){ b.addEventListener('click', function(){ openFicha(b.dataset.goto); }); });
   var f = $('fxFilter'); if(f) f.addEventListener('click', function(ev){ var b = ev.target.closest('[data-v]'); if(!b) return; FX.tipo = b.dataset.v; FX.hl = null; renderFicha(); });
 }
@@ -1025,8 +1097,12 @@ window.addEventListener('hashchange', route);
      o mientras no haya clave.                                              */
 var LSI_DEMO = {
   web3formsKey: '5ffd0e28-3655-439d-9a05-ea42027eeae4',
-  correoRespaldo: 'informes.lsi2026@gmail.com'
+  correoRespaldo: 'informes.lsi2026@gmail.com',
+  // Modo demo: true = la descarga a Excel abre el formulario de demo (solo suscriptores).
+  //            false = la descarga funciona para todos.
+  modoDemo: true
 };
+if(LSI_DEMO.modoDemo){ document.documentElement.classList.add('demo-lock'); var _b = document.getElementById('bCsv'); if(_b) _b.title = 'Disponible para suscriptores'; }
 (function(){
 'use strict';
 function $(id){ return document.getElementById(id); }
@@ -1047,10 +1123,11 @@ function syncTipo(){
 }
 form.querySelectorAll('input[name=tipo]').forEach(function(r){ r.addEventListener('change', syncTipo); });
 
-function open(t, org){
+function open(t, org, nota){
   if(ov.classList.contains('open')) return;
   back = document.activeElement; origen = org || origen;
   box.classList.remove('sent'); msg('');
+  $('dmNoteT').innerHTML = nota || ''; $('dmNote').classList.toggle('show', !!nota);
   if(t){ var map = {empresa:'Empresa', universidad:'Universidad', otra:'Otra'}; var r = form.querySelector('input[name=tipo][value="'+(map[t]||'Empresa')+'"]'); if(r) r.checked = true; }
   syncTipo();
   ov.classList.add('open'); ov.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; ov.scrollTop = 0;
